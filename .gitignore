@@ -23,3 +23,5 @@ src/packages
 src/*/repositories.config
 .bottle-alias
 results
+bottles.cmd
+fubu.cmd
