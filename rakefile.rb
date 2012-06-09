@@ -72,7 +72,7 @@ def waitfor(&block)
 end
 
 desc "Compiles the app"
-msbuild :compile => [:restore_if_missing, :version] do |msb|
+msbuild :compile => [:restore_if_missing, :clean, :version] do |msb|
 	msb.command = File.join(ENV['windir'], 'Microsoft.NET', 'Framework', CLR_TOOLS_VERSION, 'MSBuild.exe')
 	msb.properties :configuration => COMPILE_TARGET
 	msb.solution = "src/FubuMVC.Ajax.sln"
