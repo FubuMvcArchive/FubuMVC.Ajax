@@ -30,8 +30,8 @@ desc "Target used for the CI server"
 task :ci => [:update_all_dependencies, :default, :history, :publish]
 
 desc "Prepares the working directory for a new build"
-task :clean do
-	#TODO: do any other tasks required to clean/prepare the working directory
+task :clean => [:update_buildsupport] do
+	
 	FileUtils.rm_rf props[:stage]
     # work around nasty latency issue where folder still exists for a short while after it is removed
     waitfor { !exists?(props[:stage]) }
