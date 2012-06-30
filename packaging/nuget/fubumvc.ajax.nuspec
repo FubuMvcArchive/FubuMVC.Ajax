@@ -16,6 +16,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\..\build\FubuMVC.Ajax.*" target="lib" />
+    <file src="..\..\src\FubuMVC.Ajax\bin\release\FubuMVC.Ajax.*" target="lib\net40" />
   </files>
 </package>
