@@ -60,6 +60,7 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="ApplyAjaxDiagnostics.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Diagnostics\AjaxDiagnostics.cs" />
     <Compile Include="CorrelateRequests.cs" />
     <Compile Include="Diagnostics\AjaxDiagnosticsPartial.cs" />
@@ -84,4 +85,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <EmbeddedResource Include="pak-WebContent.zip" />
+  </ItemGroup>
 </Project>
