@@ -11,7 +11,20 @@ namespace FubuMVC.Ajax
 		public void Configure(FubuRegistry registry)
 		{
 			registry.Actions.FindWith<AjaxDiagnosticsSource>();
-		}
+            registry.Services(x => x.SetServiceIfNone<ICorrelateRequests, CorrelateRequests>());
+            registry.Policies.Add<CorrelationPolicy>();
+        }
+
+        [ConfigurationType(ConfigurationType.Instrumentation)]
+        public class CorrelationPolicy : IConfigurationAction
+        {
+            public void Configure(BehaviorGraph graph)
+            {
+                graph
+                    .Behaviors
+                    .Each(chain => chain.Prepend(new SetCorrelationHeadersNode()));
+            }
+        }
 
 		public class AjaxDiagnosticsSource : IActionSource
 		{

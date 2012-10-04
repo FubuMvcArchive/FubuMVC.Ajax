@@ -20,7 +20,7 @@ namespace FubuMVC.Ajax.Diagnostics
 		private HtmlTag addInput(Expression<Func<AjaxDiagnostics, object>> expression)
 		{
 			var accessor = expression.ToAccessor();
-			return Add("input").Attr("type", "hidden").Id(accessor.Name);
+			return Add("input").Attr("type", "hidden").Id(accessor.Name).Attr("name", accessor.Name);
 		}
 	}
 }
