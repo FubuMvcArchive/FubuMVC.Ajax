@@ -12,7 +12,7 @@
     <description>Request correlation and other AJAX helpers for FubuMVC</description>
     <tags>fubumvc ajax continuations</tags>
     <dependencies>
-      <dependency id="FubuMVC.References" version="0.9.6.952" />
+      <dependency id="FubuMVC.Core" version="0.9.8.1247" />
     </dependencies>
   </metadata>
   <files>

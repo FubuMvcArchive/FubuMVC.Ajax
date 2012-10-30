@@ -28,7 +28,7 @@ namespace FubuMVC.Ajax.Tests
 		public void creates_input_for_errors()
 		{
 			var accessor = ReflectionHelper.GetAccessor<AjaxDiagnostics>(x => x.Errors);
-            theTag.Children[1].ToString().ShouldEqual("<input type=\"hidden\" id=\"{0}\" name=\"{0}\" />".ToFormat(accessor.Name));
+            theTag.Children[1].ToString().ShouldEqual("<input type=\"hidden\" id=\"{0}\" name=\"{0}\" value=\"\" />".ToFormat(accessor.Name));
 		}
 	}
 }
