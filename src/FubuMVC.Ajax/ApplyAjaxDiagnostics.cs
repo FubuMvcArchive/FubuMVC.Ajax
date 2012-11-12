@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Reflection;
 using FubuMVC.Ajax.Diagnostics;
 using FubuMVC.Core;
 using FubuMVC.Core.Registration;
@@ -28,10 +29,10 @@ namespace FubuMVC.Ajax
 
 		public class AjaxDiagnosticsSource : IActionSource
 		{
-			public IEnumerable<ActionCall> FindActions(TypePool types)
-			{
-				yield return ActionCall.For<AjaxDiagnosticsPartial>(x => x.Build(null));
-			}
+		    public IEnumerable<ActionCall> FindActions(Assembly applicationAssembly)
+		    {
+                yield return ActionCall.For<AjaxDiagnosticsPartial>(x => x.Build(null));
+		    }
 		}
 	}
 }
