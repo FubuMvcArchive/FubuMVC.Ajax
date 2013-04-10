@@ -25,3 +25,4 @@ src/*/repositories.config
 results
 bottles.cmd
 fubu.cmd
+*pak*.zip
