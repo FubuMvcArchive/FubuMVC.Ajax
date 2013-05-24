@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.Ajax", "FubuMVC.Aja
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.Ajax.Tests", "FubuMVC.Ajax.Tests\FubuMVC.Ajax.Tests.csproj", "{E68E8DD8-3F6A-422D-BA0A-9A4B99E4F608}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.Ajax.Docs", "FubuMVC.Ajax.Docs\FubuMVC.Ajax.Docs.csproj", "{CD57DA36-18A8-4AB1-AD71-F6A34D3DD60E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +20,10 @@ Global
 		{E68E8DD8-3F6A-422D-BA0A-9A4B99E4F608}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E68E8DD8-3F6A-422D-BA0A-9A4B99E4F608}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E68E8DD8-3F6A-422D-BA0A-9A4B99E4F608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD57DA36-18A8-4AB1-AD71-F6A34D3DD60E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD57DA36-18A8-4AB1-AD71-F6A34D3DD60E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD57DA36-18A8-4AB1-AD71-F6A34D3DD60E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD57DA36-18A8-4AB1-AD71-F6A34D3DD60E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
