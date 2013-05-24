@@ -73,7 +73,7 @@
     <Compile Include="SetCorrelationHeadersNode.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="ripple.dependencies.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="content\scripts\ajax-diagnostics.amplify.js" />

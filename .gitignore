@@ -26,3 +26,5 @@ results
 bottles.cmd
 fubu.cmd
 *pak*.zip
+logs
+Gemfile.lock
