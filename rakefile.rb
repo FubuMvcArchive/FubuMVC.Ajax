@@ -24,6 +24,8 @@ FubuRake::Solution.new do |sln|
 	sln.fubudocs_enabled = true
     
     sln.assembly_bottle 'FubuMVC.Ajax'
+    
+    sln.ci_steps = ['run_phantom']
 end
 
 desc "Runs the ST suite using Phantom"
