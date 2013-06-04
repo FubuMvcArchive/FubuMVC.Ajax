@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Test name="Activates the ajax form and uses a correlatedSubmit" lifecycle="Regression">
+  <AjaxForm>
+    <TheFormIsActivated isStep="True" />
+    <EnterMessage isStep="True" Message="Testing, testing" />
+    <Submit isStep="True" />
+    <VerifyTheMessages isStep="True">
+      <rows>
+        <row isStep="True" Message="Testing, testing" />
+      </rows>
+    </VerifyTheMessages>
+  </AjaxForm>
+</Test>

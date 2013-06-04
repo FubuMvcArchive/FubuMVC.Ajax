@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<Test name="Ignored model is not activated" lifecycle="Regression">
+  <IgnoredForm>
+    <TheFormIsNotActivated isStep="True" />
+  </IgnoredForm>
+</Test>

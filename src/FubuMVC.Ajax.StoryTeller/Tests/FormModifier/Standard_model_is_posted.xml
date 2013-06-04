@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Test name="Standard model is posted" lifecycle="Regression">
+  <StandardForm>
+    <TheFormIsActivated isStep="True" />
+    <Submit isStep="True" />
+    <NoMessages isStep="True" />
+  </StandardForm>
+</Test>

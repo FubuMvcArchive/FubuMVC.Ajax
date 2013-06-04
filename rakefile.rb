@@ -20,10 +20,19 @@ FubuRake::Solution.new do |sln|
 		:copyright => 'Copyright 2012-2013 Josh Arnold, et al. All rights reserved.'
 	}
 	
-	sln.assembly_bottle 'FubuMVC.Ajax'
-	
 	sln.ripple_enabled = true
 	sln.fubudocs_enabled = true
     
     sln.assembly_bottle 'FubuMVC.Ajax'
+end
+
+desc "Runs the ST suite using Phantom"
+task :run_phantom => [:compile] do
+    serenity "storyteller src/FubuMVC.Ajax.StoryTeller/Ajax.xml results/StoryTeller.html -b Phantom"
+    artifacts = File.expand_path('artifacts', File.dirname(__FILE__))
+end
+
+def self.serenity(args)
+  serenity = Platform.runtime(Nuget.tool("Serenity", "SerenityRunner.exe"), "v4.0.30319")
+  sh "#{serenity} #{args}"
 end

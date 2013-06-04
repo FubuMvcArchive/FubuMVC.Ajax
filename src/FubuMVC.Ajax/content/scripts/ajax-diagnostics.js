@@ -1,15 +1,23 @@
-﻿(function () {
+﻿(function ($, continuations) {
     var pendingRequests = [];
+    var initialized = false;
+    
     var updateRequests = function () {
-        $('#PendingRequests').val(pendingRequests.length);
+        var id = 'PendingRequests';
+        if(!initialized) {
+            $('<input type="hidden" value="0" />').attr("id", id).appendTo('body');
+            initialized = true;
+        }
+        
+        $('#' + id).val(pendingRequests.length);
     };
 
-    $.continuations.bind('AjaxStarted', function (request) {
+    continuations.bind('AjaxStarted', function (request) {
         pendingRequests.push(request);
         updateRequests();
     });
 
-    $.continuations.bind('AjaxCompleted', function (response) {
+    continuations.bind('AjaxCompleted', function (response) {
         var id = response.correlationId;
         var tmpRequests = [];
         for (var i = 0; i < pendingRequests.length; i++) {
@@ -23,4 +31,4 @@
         pendingRequests = tmpRequests;
         updateRequests();
     });
-} ());
+} (jQuery, jQuery.continuations));

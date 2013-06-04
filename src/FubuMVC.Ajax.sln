@@ -1,10 +1,12 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.Ajax", "FubuMVC.Ajax\FubuMVC.Ajax.csproj", "{79252960-6EC6-49CE-A19C-732DDA817333}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.Ajax.Tests", "FubuMVC.Ajax.Tests\FubuMVC.Ajax.Tests.csproj", "{E68E8DD8-3F6A-422D-BA0A-9A4B99E4F608}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.Ajax.Docs", "FubuMVC.Ajax.Docs\FubuMVC.Ajax.Docs.csproj", "{CD57DA36-18A8-4AB1-AD71-F6A34D3DD60E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.Ajax.StoryTeller", "FubuMVC.Ajax.StoryTeller\FubuMVC.Ajax.StoryTeller.csproj", "{2AABFC35-A939-44BD-AE08-BD9FDCE58528}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +26,10 @@ Global
 		{CD57DA36-18A8-4AB1-AD71-F6A34D3DD60E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD57DA36-18A8-4AB1-AD71-F6A34D3DD60E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD57DA36-18A8-4AB1-AD71-F6A34D3DD60E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AABFC35-A939-44BD-AE08-BD9FDCE58528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AABFC35-A939-44BD-AE08-BD9FDCE58528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AABFC35-A939-44BD-AE08-BD9FDCE58528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AABFC35-A939-44BD-AE08-BD9FDCE58528}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
