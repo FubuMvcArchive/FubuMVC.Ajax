@@ -33,4 +33,4 @@
     }
   });
 
-}(jQuery, jQuery.continuations));
+}(jQuery, $fubu.continuations));
