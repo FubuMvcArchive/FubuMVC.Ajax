@@ -91,8 +91,9 @@
   <ItemGroup>
     <Content Include="content\scripts\ajax-diagnostics.js" />
     <Content Include="content\scripts\FormActivator.js" />
-    <Content Include="content\scripts\jquery.continuations.forms.js" />
-    <Content Include="content\scripts\jquery.continuations.js" />
+    <Content Include="content\scripts\fubucontinuations.jquery.forms.js" />
+    <Content Include="content\scripts\fubucontinuations.jquery.js" />
+    <Content Include="content\scripts\fubucontinuations.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
