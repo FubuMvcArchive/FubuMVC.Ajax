@@ -89,7 +89,7 @@
     <None Include="ripple.dependencies.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\scripts\ajax-diagnostics.js" />
+    <Content Include="content\scripts\fubucontinuations.diagnostics.js" />
     <Content Include="content\scripts\FormActivator.js" />
     <Content Include="content\scripts\fubucontinuations.jquery.forms.js" />
     <Content Include="content\scripts\fubucontinuations.jquery.js" />

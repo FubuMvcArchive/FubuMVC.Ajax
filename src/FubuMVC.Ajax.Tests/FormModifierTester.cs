@@ -4,6 +4,7 @@ using FubuMVC.Core.Http;
 using FubuMVC.Core.Registration;
 using FubuMVC.Core.Registration.Querying;
 using FubuMVC.Core.UI.Forms;
+using FubuMVC.Core.Urls;
 using FubuTestingSupport;
 using HtmlTags;
 using NUnit.Framework;
@@ -33,7 +34,7 @@ namespace FubuMVC.Ajax.Tests
 			var services = new InMemoryServiceLocator();
 			services.Add<IChainResolver>(new ChainResolutionCache(new TypeResolver(), theGraph));
 			services.Add(theRequirements);
-			services.Add<ICurrentHttpRequest>(new StandInCurrentHttpRequest());
+            services.Add<IChainUrlResolver>(new ChainUrlResolver(new StandInCurrentHttpRequest()));
 			services.Add(new FormSettings());
 
 			var request = new FormRequest(new ChainSearch { Type = typeof(T) }, new T());
