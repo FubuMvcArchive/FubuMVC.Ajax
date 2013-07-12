@@ -3,7 +3,7 @@
   var elementId = 'PendingRequests';
 
   var updateRequests = function () {
-    $('#' + id).val(pendingRequests.length);
+    $('#' + elementId).val(pendingRequests.length);
   };
 
   continuations.bind('AjaxStarted', function (request) {
