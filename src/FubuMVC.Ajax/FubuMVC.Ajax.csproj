@@ -69,6 +69,7 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AjaxExtensions.cs" />
+    <Compile Include="Diagnostics\AjaxDiagnostics.cs" />
     <Compile Include="Diagnostics\AjaxDiagnosticsExtension.cs" />
     <Compile Include="Diagnostics\CorrelateRequests.cs" />
     <Compile Include="Diagnostics\ICorrelateRequests.cs" />
@@ -80,7 +81,6 @@
     <Compile Include="FormSettings.cs" />
     <Compile Include="IFormRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Diagnostics\AjaxDiagnostics.cs" />
     <Compile Include="ResourceTypeIsAjaxContinuation.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -89,8 +89,8 @@
     <None Include="ripple.dependencies.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\scripts\fubucontinuations.diagnostics.js" />
     <Content Include="content\scripts\FormActivator.js" />
+    <Content Include="content\scripts\fubucontinuations.diagnostics.js" />
     <Content Include="content\scripts\fubucontinuations.jquery.forms.js" />
     <Content Include="content\scripts\fubucontinuations.jquery.js" />
     <Content Include="content\scripts\fubucontinuations.js" />
@@ -107,9 +107,5 @@
     <EmbeddedResource Include="pak-WebContent.zip" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pak-Data.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="pak-Config.zip" />
   </ItemGroup>
 </Project>
