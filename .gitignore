@@ -30,3 +30,4 @@ logs
 Gemfile.lock
 storyteller.cmd
 run_st.cmd
+src/FubuMVC.Ajax.Docs/snippets
