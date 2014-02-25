@@ -52,8 +52,8 @@ namespace FubuMVC.Ajax.Tests
             var modifier = new FormModifier();
             modifier.Modify(theRequest);
 
-            theRequest.CurrentTag.ToString()
-                .ShouldEqual("<form method=\"post\" action=\"test\" data-form-mode=\"ajax\" class=\"activated-form\">");
+            theRequest.CurrentTag.Attr("data-form-mode").ShouldEqual("ajax");
+            theRequest.CurrentTag.HasClass("activated-form").ShouldBeTrue();
         }
 
         [Test]
@@ -64,8 +64,8 @@ namespace FubuMVC.Ajax.Tests
             var modifier = new FormModifier();
             modifier.Modify(theRequest);
 
-            theRequest.CurrentTag.ToString()
-                .ShouldEqual("<form method=\"post\" action=\"test\">");
+            theRequest.CurrentTag.HasAttr("data-form-mode").ShouldBeFalse();
+            theRequest.CurrentTag.HasClass("activated-form").ShouldBeFalse();
         }
 
         [Test]

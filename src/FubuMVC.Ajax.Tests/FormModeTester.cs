@@ -72,23 +72,21 @@ namespace FubuMVC.Ajax.Tests
         public void no_modification_to_tag()
         {
             formForMode(FormMode.None)
-                .ToString().ShouldEqual("<form method=\"post\" action=\"test\">");
+                .HasAttr("data-form-mode").ShouldBeFalse();
         }
 
         [Test]
         public void modify_the_tag_for_ajax()
         {
             formForMode(FormMode.Ajax)
-                .ToString()
-                .ShouldEqual("<form method=\"post\" action=\"test\" data-form-mode=\"ajax\" class=\"activated-form\">");
+                .Attr("data-form-mode").ShouldEqual("ajax");
         }
 
         [Test]
         public void modify_the_tag_for_lofi()
         {
             formForMode(FormMode.LoFi)
-                .ToString()
-                .ShouldEqual("<form method=\"post\" action=\"test\" data-form-mode=\"lofi\" class=\"activated-form\">");
+                .Attr("data-form-mode").ShouldEqual("lofi");
         }
 
         private HtmlTag formForMode(FormMode mode)
