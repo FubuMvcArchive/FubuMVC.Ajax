@@ -9,9 +9,7 @@ deploy
 deploy/*
 src/CommonAssemblyInfo.cs
 _ReSharper.*
-*.csproj.user
-*.resharper.user
-*.ReSharper.user
+*.user
 *.suo
 *.cache
 ~$*
@@ -31,3 +29,4 @@ Gemfile.lock
 storyteller.cmd
 run_st.cmd
 src/FubuMVC.Ajax.Docs/snippets
+fubu-content/
