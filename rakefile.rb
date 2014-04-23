@@ -16,13 +16,13 @@ FubuRake::Solution.new do |sln|
     
     sln.assembly_bottle 'FubuMVC.Ajax'
     
-    sln.ci_steps = ['run_phantom']
+    #sln.ci_steps = ['run_phantom']
 	
 	sln.options[:nuget_publish_folder] = 'nupkgs'
 	sln.options[:nuget_publish_url] = 'https://www.myget.org/F/fubumvc-edge/'
 end
 
-add_dependency 'ripple:publish', 'run_phantom'
+#add_dependency 'ripple:publish', 'run_phantom'
 
 desc "Runs the ST suite using Phantom"
 task :run_phantom => [:compile] do
