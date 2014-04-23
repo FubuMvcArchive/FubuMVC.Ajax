@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>FubuMVC.Ajax</id>
     <version>0.0</version>
@@ -12,10 +12,10 @@
     <description>Request correlation and other AJAX helpers for FubuMVC</description>
     <tags>fubumvc ajax continuations</tags>
     <dependencies>
-      <dependency id="FubuMVC.Core" version="0.9.8.1247" />
+      <dependency id="FubuMVC.Core" version="2.0.0.1764" />
     </dependencies>
   </metadata>
-  <files>
+  <files xmlns="">
     <file src="..\..\src\FubuMVC.Ajax\bin\release\FubuMVC.Ajax.*" target="lib\net40" />
   </files>
 </package>
