@@ -1,6 +1,7 @@
 ﻿using FubuCore;
 using FubuMVC.Core.Assets;
 using FubuMVC.Core.Http;
+using FubuMVC.Core.Http.Owin;
 using FubuMVC.Core.Registration;
 using FubuMVC.Core.Registration.Querying;
 using FubuMVC.Core.UI.Forms;
@@ -16,12 +17,12 @@ namespace FubuMVC.Ajax.Tests
     public class FormModifierTester
     {
         private BehaviorGraph theGraph;
-        private IAssetRequirements theRequirements;
+        private IAssetTagBuilder theRequirements;
 
         [SetUp]
         public void SetUp()
         {
-            theRequirements = MockRepository.GenerateStub<IAssetRequirements>();
+            theRequirements = MockRepository.GenerateStub<IAssetTagBuilder>();
             theGraph = BehaviorGraph.BuildFrom(x =>
             {
                 x.Actions.IncludeType<FormModeEndpoint>();
@@ -34,7 +35,7 @@ namespace FubuMVC.Ajax.Tests
             var services = new InMemoryServiceLocator();
             services.Add<IChainResolver>(new ChainResolutionCache(new TypeResolver(), theGraph));
             services.Add(theRequirements);
-            services.Add<IChainUrlResolver>(new ChainUrlResolver(new StandInCurrentHttpRequest()));
+            services.Add<IChainUrlResolver>(new ChainUrlResolver(new OwinHttpRequest()));
             services.Add(new FormSettings());
 
             var request = new FormRequest(new ChainSearch {Type = typeof (T)}, new T());
@@ -75,7 +76,7 @@ namespace FubuMVC.Ajax.Tests
             var modifier = new FormModifier();
             modifier.Modify(theRequest);
 
-            theRequirements.AssertWasCalled(x => x.Require("FormActivator.js"));
+            theRequirements.AssertWasCalled(x => x.RequireScript("FormActivator.js"));
         }
     }
 }

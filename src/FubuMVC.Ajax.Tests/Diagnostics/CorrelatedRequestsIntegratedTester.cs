@@ -1,4 +1,5 @@
 using FubuMVC.Ajax.Diagnostics;
+using FubuMVC.Core.Http.Owin;
 using FubuMVC.Core.Runtime;
 using NUnit.Framework;
 using Rhino.Mocks;
@@ -13,10 +14,9 @@ namespace FubuMVC.Ajax.Tests.Diagnostics
 		{
 			var id = "123";
 			var writer = MockRepository.GenerateMock<IOutputWriter>();
-			var headers = new StubRequestHeaders();
+			var headers = new OwinHttpRequest();
 
-			headers.Values.Add(CorrelateRequests.Correlation_Id, id);
-
+		    headers.Header(CorrelateRequests.Correlation_Id, id);
 
 			new CorrelateRequests(headers, writer).Correlate();
 

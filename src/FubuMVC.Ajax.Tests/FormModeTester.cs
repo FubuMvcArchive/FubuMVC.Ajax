@@ -3,6 +3,7 @@ using FubuCore;
 using FubuMVC.Core.Ajax;
 using FubuMVC.Core.Assets;
 using FubuMVC.Core.Http;
+using FubuMVC.Core.Http.Owin;
 using FubuMVC.Core.Registration;
 using FubuMVC.Core.Registration.Querying;
 using FubuMVC.Core.UI.Forms;
@@ -18,13 +19,13 @@ namespace FubuMVC.Ajax.Tests
     public class FormModeTester
     {
         private BehaviorGraph theGraph;
-        private IAssetRequirements theRequirements;
+        private IAssetTagBuilder theRequirements;
         private IFormRegistry theRegistry;
 
         [SetUp]
         public void SetUp()
         {
-            theRequirements = MockRepository.GenerateStub<IAssetRequirements>();
+            theRequirements = MockRepository.GenerateStub<IAssetTagBuilder>();
             theGraph = BehaviorGraph.BuildFrom(x => x.Actions.IncludeType<FormModeEndpoint>());
 
             theRegistry = theGraph.Settings.Get<FormSettings>().BuildRegistry();
@@ -35,7 +36,7 @@ namespace FubuMVC.Ajax.Tests
             var services = new InMemoryServiceLocator();
             services.Add<IChainResolver>(new ChainResolutionCache(new TypeResolver(), theGraph));
             services.Add(theRequirements);
-            services.Add<IChainUrlResolver>(new ChainUrlResolver(new StandInCurrentHttpRequest()));
+            services.Add<IChainUrlResolver>(new ChainUrlResolver(new OwinHttpRequest()));
 
             var request = new FormRequest(new ChainSearch {Type = typeof (T)}, new T());
             request.Attach(services);

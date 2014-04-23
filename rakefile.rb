@@ -1,13 +1,4 @@
-begin
-  require 'bundler/setup'
-  require 'fuburake'
-rescue LoadError
-  puts 'Bundler and all the gems need to be installed prior to running this rake script. Installing...'
-  system("gem install bundler --source http://rubygems.org")
-  sh 'bundle install'
-  system("bundle exec rake", *ARGV)
-  exit 0
-end
+require 'fuburake'
 
 
 FubuRake::Solution.new do |sln|
@@ -26,7 +17,12 @@ FubuRake::Solution.new do |sln|
     sln.assembly_bottle 'FubuMVC.Ajax'
     
     sln.ci_steps = ['run_phantom']
+	
+	sln.options[:nuget_publish_folder] = 'nupkgs'
+	sln.options[:nuget_publish_url] = 'https://www.myget.org/F/fubumvc-edge/'
 end
+
+add_dependency 'ripple:publish', 'run_phantom'
 
 desc "Runs the ST suite using Phantom"
 task :run_phantom => [:compile] do

@@ -22,7 +22,7 @@ namespace FubuMVC.Ajax
 
         private void writeScriptRequirements(FormRequest request)
         {
-            request.Services.GetInstance<IAssetRequirements>().Require("FormActivator.js");
+            request.Services.GetInstance<IAssetTagBuilder>().RequireScript("FormActivator.js");
         }
     }
 }

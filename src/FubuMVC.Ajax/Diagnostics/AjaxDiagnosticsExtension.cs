@@ -9,10 +9,9 @@ namespace FubuMVC.Ajax.Diagnostics
 		public void Configure(FubuRegistry registry)
 		{
             registry.Services(x => x.SetServiceIfNone<ICorrelateRequests, CorrelateRequests>());
-            registry.Policies.Add<CorrelationPolicy>();
+            registry.Policies.Global.Add<CorrelationPolicy>();
         }
 
-        [ConfigurationType(ConfigurationType.Instrumentation)]
         public class CorrelationPolicy : IConfigurationAction
         {
             public void Configure(BehaviorGraph graph)

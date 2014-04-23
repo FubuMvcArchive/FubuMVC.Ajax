@@ -8,7 +8,6 @@ using FubuMVC.Core.Endpoints;
 using FubuMVC.Core.Packaging;
 using FubuMVC.Core.Runtime;
 using FubuMVC.Katana;
-using FubuMVC.OwinHost;
 using FubuMVC.StructureMap;
 using FubuTestingSupport;
 using NUnit.Framework;
