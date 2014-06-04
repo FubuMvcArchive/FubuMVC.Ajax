@@ -31,3 +31,5 @@ run_st.cmd
 src/FubuMVC.Ajax.Docs/snippets
 fubu-content/
 nupkgs
+st-artifacts
+Ajax-results

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using OpenQA.Selenium;
+using Serenity;
 using Serenity.Fixtures;
 using StoryTeller;
 using StoryTeller.Engine;
@@ -60,8 +61,17 @@ namespace FubuMVC.Ajax.StoryTeller.Fixtures
 
 		private IEnumerable<RecordedMessage> messages()
 		{
-			return Driver.InjectJavascript<IEnumerable<object>>("return Recorder.allMessages()")
-				.Cast<string>()
+		    IEnumerable<string> results = null;
+
+            // give time for the ajax request to return
+            Wait.Until(() =>
+            {
+                results = Driver.InjectJavascript<IEnumerable<object>>("return Recorder.allMessages()")
+                    .Cast<string>();
+                return results != null && results.Any();
+            }, 500, 1000);
+
+			return results
 				.Select(x => new RecordedMessage { Message = x});
 		}
 
