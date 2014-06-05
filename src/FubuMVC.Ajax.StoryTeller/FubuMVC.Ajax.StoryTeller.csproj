@@ -110,12 +110,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ajaxstoryteller.asset.config" />
     <None Include="ripple.dependencies.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\scripts\jquery-1.11.1.min.js" />
     <Content Include="content\scripts\recorder.js" />
     <Content Include="Ajax.xml" />
   </ItemGroup>

@@ -2,6 +2,7 @@
 using FubuMVC.Core.Assets;
 using FubuMVC.Core.Continuations;
 using FubuMVC.Core.UI;
+using FubuMVC.Core.View;
 using HtmlTags;
 
 namespace FubuMVC.Ajax.StoryTeller
@@ -19,13 +20,11 @@ namespace FubuMVC.Ajax.StoryTeller
 			_ajaxPage = ajaxPage;
 		}
 
-
 		public FubuHtmlDocument<StandardIn> get_standard(StandardIn input)
 		{
 			_standardPage.Add(new HtmlTag("h1").Text("Standard Form"));
 			_standardPage.Add(createStandardForm());
-			_standardPage.Asset("recorder.js");
-			_standardPage.Add(_standardPage.WriteScriptTags());
+		    _standardPage.Add(CoreScripts(_standardPage));
 			return _standardPage;
 		}
 
@@ -38,8 +37,7 @@ namespace FubuMVC.Ajax.StoryTeller
 		{
 			_ajaxPage.Add(new HtmlTag("h1").Text("Ajax Form"));
 			_ajaxPage.Add(createAjaxForm());
-			_ajaxPage.Asset("recorder.js");
-			_ajaxPage.Add(_ajaxPage.WriteScriptTags());
+            _ajaxPage.Add(CoreScripts(_ajaxPage));
 			return _ajaxPage;
 		}
 
@@ -55,8 +53,7 @@ namespace FubuMVC.Ajax.StoryTeller
 		{
 			_ignoredPage.Add(new HtmlTag("h1").Text("Ignored Form"));
 			_ignoredPage.Add(createIgnoredForm());
-			_ignoredPage.Asset("recorder.js");
-			_ignoredPage.Add(_ignoredPage.WriteScriptTags());
+		    _ignoredPage.Add(CoreScripts(_ignoredPage));
 			return _ignoredPage; 
 		}
 
@@ -97,5 +94,17 @@ namespace FubuMVC.Ajax.StoryTeller
 
 			return form;
 		}
+
+	    private TagList CoreScripts(IFubuPage page)
+	    {
+	        return page.Script(
+                "jquery-1.11.1.min.js",
+                "jquery.form.js",
+                "fubucontinuations.js",
+                "fubucontinuations.jquery.js",
+                "fubucontinuations.jquery.forms.js",
+                "FormActivator.js",
+                "recorder.js");
+	    }
 	}
 }

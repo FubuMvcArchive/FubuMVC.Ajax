@@ -96,6 +96,7 @@
     <Content Include="content\scripts\fubucontinuations.jquery.forms.js" />
     <Content Include="content\scripts\fubucontinuations.jquery.js" />
     <Content Include="content\scripts\fubucontinuations.js" />
+    <Content Include="content\scripts\jquery.form.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -108,5 +109,6 @@
   <ItemGroup>
     <EmbeddedResource Include="pak-WebContent.zip" />
   </ItemGroup>
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
 </Project>

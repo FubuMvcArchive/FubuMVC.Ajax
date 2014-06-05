@@ -68,15 +68,5 @@ namespace FubuMVC.Ajax.Tests
             theRequest.CurrentTag.HasAttr("data-form-mode").ShouldBeFalse();
             theRequest.CurrentTag.HasClass("activated-form").ShouldBeFalse();
         }
-
-        [Test]
-        public void writes_the_form_activator_requirement()
-        {
-            var theRequest = requestFor<AjaxTarget>();
-            var modifier = new FormModifier();
-            modifier.Modify(theRequest);
-
-            theRequirements.AssertWasCalled(x => x.RequireScript("FormActivator.js"));
-        }
     }
 }
